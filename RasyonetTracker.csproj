@@ -16,4 +16,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="RasyonetTracker.Tests\**" />
+    <Content Remove="RasyonetTracker.Tests\**" />
+    <None Remove="RasyonetTracker.Tests\**" />
+  </ItemGroup>
+
 </Project>
