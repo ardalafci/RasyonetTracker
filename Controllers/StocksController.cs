@@ -90,5 +90,19 @@ namespace RasyonetTracker.Controllers
 
             return Ok(new { Message = $"'{symbol}' hissesi portföyden başarıyla silindi." });
         }
+
+        // 5. ENDPOINT: İzlenen hisselerin toplam değerini getir
+        // GET: api/stocks/analytics/total-value
+        [HttpGet("analytics/total-value")]
+        public async Task<IActionResult> GetTotalPortfolioValue()
+        {
+            var total = await _stockService.GetTotalPortfolioValueAsync();
+            
+            return Ok(new 
+            { 
+                Description = "İzlenen tüm hisselerin toplam portföy değeri",
+                TotalValue = Math.Round(total, 2) 
+            });
+        }
     }
 }

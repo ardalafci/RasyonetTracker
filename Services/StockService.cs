@@ -74,5 +74,15 @@ namespace RasyonetTracker.Services
 
             return stocks.Average(s => s.CurrentPrice);
         }
+
+        // İkinci Analitik Görevi: Portföyün Toplam Değerini Hesaplar
+        public async Task<decimal> GetTotalPortfolioValueAsync()
+        {
+            var stocks = await _repository.GetAllAsync();
+            if (!stocks.Any()) return 0;
+
+            // Bütün hisselerin o anki fiyatlarını toplar (Aggregation)
+            return stocks.Sum(s => s.CurrentPrice);
+        }
     }
 }
