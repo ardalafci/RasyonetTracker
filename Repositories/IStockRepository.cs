@@ -1,3 +1,4 @@
+using RasyonetTracker.Models; 
 namespace RasyonetTracker.Repositories
 {
     /* * * MİMARİ KARAR: Neden Interface Kullanıldı?
