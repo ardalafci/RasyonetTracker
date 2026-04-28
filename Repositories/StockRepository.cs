@@ -40,6 +40,11 @@ namespace RasyonetTracker.Repositories
             _context.Stocks.Update(stock);
             return Task.CompletedTask;
         }
+        public Task DeleteAsync(Stock stock)
+        {
+            _context.Stocks.Remove(stock);
+            return Task.CompletedTask;
+        }
 
         public async Task SaveChangesAsync()
         {

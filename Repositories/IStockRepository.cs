@@ -12,6 +12,7 @@ namespace RasyonetTracker.Repositories
         Task<Stock?> GetBySymbolAsync(string symbol);
         Task AddAsync(Stock stock);
         Task UpdateAsync(Stock stock);
+        Task DeleteAsync(Stock stock);
         Task SaveChangesAsync();
     }
 }

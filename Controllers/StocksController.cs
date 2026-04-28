@@ -75,5 +75,20 @@ namespace RasyonetTracker.Controllers
                 AveragePrice = Math.Round(average, 2) 
             });
         }
+        // 4. ENDPOINT: İzleme listesinden hisse sil
+        // DELETE: api/stocks/{symbol}
+        [HttpDelete("{symbol}")]
+        public async Task<IActionResult> DeleteStock(string symbol)
+        {
+            var stock = await _repository.GetBySymbolAsync(symbol);
+            
+            if (stock == null)
+                return NotFound(new { Message = $"'{symbol}' sembolü portföyde bulunamadı." });
+
+            await _repository.DeleteAsync(stock);
+            await _repository.SaveChangesAsync();
+
+            return Ok(new { Message = $"'{symbol}' hissesi portföyden başarıyla silindi." });
+        }
     }
 }
