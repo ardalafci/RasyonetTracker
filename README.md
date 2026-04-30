@@ -65,7 +65,7 @@ docker build -t rasyonettracker-api .
 
 ### 2. Initializing (Run) the Container
 ``` bash
-docker run -d -p 8080:8080 -e ASPNETCORE_ENVIRONMENT=Development --name myapi rationalettracker-api
+docker run -d -p 8080:8080 -e ASPNETCORE_ENVIRONMENT=Development --name myapi rasyonettracker-api
 ```
 
 
