@@ -29,7 +29,7 @@ Proje geliştirilirken mülakat dokümanında belirtilen tüm zorunlu, gizli ve 
 ### 🔴 Zorunlu İsterler (Must Have)
 * **.NET 6 veya üzeri:** Proje, güncel LTS sürümü olan **.NET 8** ile geliştirilmiştir.
 * **Dış API Entegrasyonu:** Gerçek zamanlı fiyat verileri için **Finnhub API** kullanılarak entegrasyon sağlanmıştır.
-* **Analitik / Agregasyon Senaryosu:** Veritabanındaki hisselerin o anki canlı fiyatları üzerinden portföyün genel ortalamasını hesaplayan `GET /api/stocks/portfolio/average` endpoint'i yazılmıştır.
+* **Analitik / Agregasyon Senaryosu:** Veritabanındaki hisselerin o anki canlı fiyatları üzerinden portföyün **toplam değerini (Total Value)** ve **genel ortalamasını (Average Value)** hesaplayan analitik uç noktalar yazılmıştır.
 * **Veritabanı:** Kurulum kolaylığı ve platform bağımsızlığı açısından **SQLite** (Entity Framework Core ile) tercih edilmiştir. Temel varlık (Entity) olarak `Stock` modeli kullanılmıştır.
 * **Temiz RESTful API:** 4 adet temel CRUD işlemi ve 1 adet agregasyon olmak üzere toplam 5 temiz uç nokta (endpoint) oluşturulmuştur.
 * **OOP Prensipleri:** Proje genelinde Interface (Arayüz) kullanımı, Encapsulation (Kapsülleme) ve Dependency Injection (Bağımlılık Enjeksiyonu) gibi OOP ilkelerine sıkı sıkıya bağlı kalınmıştır.
